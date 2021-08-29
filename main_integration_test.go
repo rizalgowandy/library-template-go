@@ -5,7 +5,7 @@ import (
 	"os"
 	"testing"
 
-	"github.com/benalucorp/library-template-go/pkg/api"
+	"github.com/rizalgowandy/library-template-go/pkg/api"
 	"github.com/kokizzu/gotro/L"
 )
 

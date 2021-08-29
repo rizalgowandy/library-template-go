@@ -1,11 +1,10 @@
-[![Go Doc](https://pkg.go.dev/badge/github.com/benalucorp/library-template-go?status.svg)](https://pkg.go.dev/github.com/benalucorp/library-template-go?tab=doc)
-[![Release](https://img.shields.io/github/release/benalucorp/library-template-go.svg?style=flat-square)](https://github.com/benalucorp/library-template-go/releases)
-[![Go Report Card](https://goreportcard.com/badge/github.com/benalucorp/library-template-go)](https://goreportcard.com/report/github.com/benalucorp/library-template-go)
-[![Build Status](https://github.com/benalucorp/library-template-go/workflows/Go/badge.svg?branch=main)](https://github.com/benalucorp/library-template-go/actions?query=branch%3Amain)
-[![Sourcegraph](https://sourcegraph.com/github.com/benalucorp/library-template-go/-/badge.svg)](https://sourcegraph.com/github.com/benalucorp/library-template-go?badge)
-[![TODOs](https://badgen.net/https/api.tickgit.com/badgen/github.com/benalucorp/library-template-go)](https://www.tickgit.com/browse?repo=github.com/benalucorp/library-template-go)
+[![Go Doc](https://pkg.go.dev/badge/github.com/rizalgowandy/library-template-go?status.svg)](https://pkg.go.dev/github.com/rizalgowandy/library-template-go?tab=doc)
+[![Release](https://img.shields.io/github/release/rizalgowandy/library-template-go.svg?style=flat-square)](https://github.com/rizalgowandy/library-template-go/releases)
+[![Go Report Card](https://goreportcard.com/badge/github.com/rizalgowandy/library-template-go)](https://goreportcard.com/report/github.com/rizalgowandy/library-template-go)
+[![Build Status](https://github.com/rizalgowandy/library-template-go/workflows/Go/badge.svg?branch=main)](https://github.com/rizalgowandy/library-template-go/actions?query=branch%3Amain)
+[![Sourcegraph](https://sourcegraph.com/github.com/rizalgowandy/library-template-go/-/badge.svg)](https://sourcegraph.com/github.com/rizalgowandy/library-template-go?badge)
 
-![gdk](https://socialify.git.ci/benalucorp/library-template-go/image?description=1&language=1&owner=1&pattern=Floating%20Cogs&theme=Light)
+![gdk](https://socialify.git.ci/rizalgowandy/library-template-go/image?description=1&language=1&pattern=Floating%20Cogs&theme=Light)
 
 ## Getting Started
 
@@ -15,7 +14,7 @@
 
 ```shell
 # TODO: replace me
-go get -v github.com/benalucorp/library-template-go
+go get -v github.com/rizalgowandy/library-template-go
 ```
 
 ## Quick Start

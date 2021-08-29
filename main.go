@@ -2,7 +2,7 @@
 package library
 
 import (
-	"github.com/benalucorp/library-template-go/pkg/api"
+	"github.com/rizalgowandy/library-template-go/pkg/api"
 )
 
 // TODO: replace me

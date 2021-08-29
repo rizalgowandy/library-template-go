@@ -1,5 +1,5 @@
 // TODO: replace me
-module github.com/benalucorp/library-template-go
+module github.com/rizalgowandy/library-template-go
 
 go 1.16
 
