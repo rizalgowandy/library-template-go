@@ -18,7 +18,7 @@ testExecutionTime:
     path: docs/time.svg
 diff:
   datastores:
-    - artifact://rizalgowandy/cronx
+    - artifact://rizalgowandy/library-template-go
 push:
   if: is_default_branch
 comment:
@@ -28,4 +28,4 @@ comment:
 report:
   if: is_default_branch
   datastores:
-    - artifact://rizalgowandy/cronx
+    - artifact://rizalgowandy/library-template-go
