@@ -1,8 +1,5 @@
 name: Go
 
-env:
-  GOFLAGS: -mod=vendor
-
 on:
   push:
     branches: [ main ]
