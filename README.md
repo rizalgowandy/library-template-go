@@ -4,7 +4,7 @@
 [![Build Status](https://github.com/rizalgowandy/library-template-go/workflows/Go/badge.svg?branch=main)](https://github.com/rizalgowandy/library-template-go/actions?query=branch%3Amain)
 [![Sourcegraph](https://sourcegraph.com/github.com/rizalgowandy/library-template-go/-/badge.svg)](https://sourcegraph.com/github.com/rizalgowandy/library-template-go?badge)
 
-![logo](https://socialify.git.ci/rizalgowandy/library-template-go/image?description=1&language=1&pattern=Floating%20Cogs&theme=Light)
+![logo](.github/library-template-go.png)
 
 ## Getting Started
 
@@ -27,7 +27,7 @@ For more example check [here](main_integration_test.go).
 
 ## Test Double / Stub
 
-Sometime it's make sense to make an API call without actually calling the API. In order to support that this library has a built-in stub that can be triggered. You can enable stub by injecting certain value to the context data. You can also enforce that certain API call will always return error with specific type and
+Sometimes it's make sense to make an API call without actually calling the API. In order to support that this library has a built-in stub that can be triggered. You can enable stub by injecting certain value to the context data. You can also enforce that certain API call will always return error with specific type and
 message.
 
 ```go
