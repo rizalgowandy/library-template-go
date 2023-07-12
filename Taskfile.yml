@@ -21,12 +21,12 @@ tasks:
 
   generate:
     cmds:
-      - go generate -v ./...
+      - go generate ./...
 
   analysis:
     deps: [generate]
     cmds:
-      - golangci-lint run -v --new-from-rev HEAD~ ./...
+      - golangci-lint run --new-from-rev HEAD~ ./...
 
   unit_tests:
     deps: [generate]
