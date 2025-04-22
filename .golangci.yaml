@@ -1,74 +1,102 @@
-run:
-  skip-dirs:
-    - mocks
-    - docs
-
+version: "2"
 linters:
-  enable-all: true
+  default: all
   disable:
-    - maligned
-    - wsl
-    - whitespace
-    - godox
-    - godot
-    - interfacer
-    - nolintlint
-    - noctx
-    - gofumpt
+    - cyclop
     - exhaustive
-    - gci
-    - nlreturn
-    - exhaustivestruct
-    - forbidigo
-    - paralleltest
-    - cyclop # we already have gocyclo enabled
-    - ifshort
-    - nilerr
-    - thelper
-    - tagliatelle
-    - golint # deprecated in favour of revive
-    - scopelint # deprecated in favour of exportloopref
-    - revive
-    - ireturn
-    - nonamedreturns
     - exhaustruct
-    - gomnd
+    - forbidigo
+    - godot
+    - godox
+    - ireturn
+    - mnd
+    - nilerr
+    - nlreturn
+    - noctx
+    - nolintlint
+    - nonamedreturns
+    - paralleltest
+    - revive
+    - tagliatelle
+    - thelper
     - varnamelen
-    - varcheck # deprecated in favour of unused
-    - deadcode # deprecated in favour of unused
-    - structcheck # deprecated in favour of unused
-    - nosnakecase # deprecated in favour of revive
-    - musttag
-
+    - whitespace
+    - wsl
+    - depguard
+  settings:
+    dupl:
+      threshold: 100
+    funlen:
+      lines: 100
+      statements: 40
+    gocyclo:
+      min-complexity: 20
+    lll:
+      line-length: 140
+  exclusions:
+    generated: lax
+    rules:
+      - linters:
+          - bodyclose
+          - dupl
+          - err113
+          - errcheck
+          - funlen
+          - gochecknoglobals
+          - goconst
+          - gosec
+          - lll
+          - mnd
+          - testpackage
+          - unparam
+          - varnamelen
+          - wrapcheck
+        path: _test\.go
+      - linters:
+          - lll
+        source: '^//go:generate '
+      - path: (.+)\.go$
+        text: should have a package comment, unless it's in another file for this package
+      - path: (.+)\.go$
+        text: (struct field|var|func|method|func parameter|range var|const|type) .* should be .*
+      - path: (.+)\.go$
+        text: the channel used with signal.Notify should be buffered
+      - path: (.+)\.go$
+        text: 'G104:'
+      - path: (.+)\.go$
+        text: Error return value of `.*.Body.Close` is not checked
+      - path: (.+)\.go$
+        text: Error return value of `.*.Close()` is not checked
+      - path: (.+)\.go$
+        text: Error return value of `rows.Close` is not checked
+      - path: (.+)\.go$
+        text: Error return value of `viper.BindEnv` is not checked
+      - path: (.+)\.go$
+        text: 'G108: Profiling endpoint is automatically exposed on /debug/pprof'
+      - path: (.+)\.go$
+        text: exported var Err.* should have comment or be unexported
+      - path: (.+)\.go$
+        text: put a space between `//` and comment text
+      - path: (.+)\.go$
+        text: Function 'main' has too many statements
+      - path: (.+)\.go$
+        text: 'ST1000:'
+      - path: (.+)\.go$
+        text: 'G204:'
+    paths:
+      - third_party$
+      - builtin$
+      - examples$
 issues:
-  exclude-use-default: false
-  max-per-linter: 0
   max-same-issues: 0
   new-from-rev: HEAD~
-  exclude:
-    - "should have a package comment, unless it's in another file for this package"
-    - "(struct field|var|func|method|func parameter|range var|const|type) .* should be .*"
-  # Excluding configuration per-path, per-linter, per-text and per-source
-  exclude-rules:
-    - path: _test\.go
-      linters:
-        - gomnd
-        - scopelint
-        - dupl
-        - stylecheck
-        - funlen
-        - lll
-    - path: stub
-      linters:
-        - funlen
-    - path: api
-      linters:
-        - dupl
-
-    # https://github.com/go-critic/go-critic/issues/926
-    - linters:
-        - gocritic
-      text: "unnecessaryDefer:"
-    - linters:
-        - lll
-      source: "^//go:generate "
+formatters:
+  enable:
+    - gofmt
+    - goimports
+  exclusions:
+    generated: lax
+    paths:
+      - third_party$
+      - builtin$
+      - examples$
