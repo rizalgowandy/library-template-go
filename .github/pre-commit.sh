@@ -22,6 +22,24 @@ if [ "$nonformatted" ]; then
   printf "\n"
 fi
 
+# List all nonformatted files
+files=$(git diff --cached --name-only --diff-filter=ACM | grep '\.go$')
+
+# Filter files to only include those in packages containing "entity" or "dto"
+entity_files=$(echo "$files" | grep -E "entity|dto")
+
+# Some files are not formatted with golines. Print message.
+nonformatted=$(golines -l $entity_files)
+if [ "$nonformatted" ]; then
+  echo >&2 "Go files in 'entity|dto' packages must be formatted with golines. Running:"
+  for fn in $nonformatted; do
+    echo >&2 "  golines -w $PWD/$fn"
+    golines -w "$PWD/$fn"
+    git add "$PWD/$fn"
+  done
+  printf "\n"
+fi
+
 # Run linter.
 task analysis || exit 1
 

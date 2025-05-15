@@ -10,11 +10,13 @@ tasks:
     env:
       FILE: ".git/hooks/pre-commit"
     cmds:
-      - command -v air 2>/dev/null || go install github.com/air-verse/air@v1.61.7
-      - command -v mockgen 2>/dev/null || go install -v github.com/golang/mock/mockgen@v1.6.0 # v1.6.0
-      - command -v golangci-lint 2>/dev/null || curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/HEAD/install.sh | sh -s -- -b $(go env GOPATH)/bin v2.1.2
-      - command -v gomodifytags 2>/dev/null || go install -v github.com/fatih/gomodifytags@v1.17.0
-      - command -v gotestsum 2>/dev/null || go install -v gotest.tools/gotestsum@v1.12.1
+      - go install -v github.com/golangci/golangci-lint/v2/cmd/golangci-lint@latest
+      - go install -v github.com/air-verse/air@latest
+      - go install -v github.com/golang/mock/mockgen@latest
+      - go install -v github.com/fatih/gomodifytags@latest
+      - go install -v github.com/golang-migrate/migrate/v4/cmd/migrate@latest
+      - go install -v gotest.tools/gotestsum@latest
+      - go install -v github.com/segmentio/golines@latest
       - cp .github/pre-commit.sh $FILE
       - chmod +x $FILE
       - test -f $FILE && echo "$FILE exists."
