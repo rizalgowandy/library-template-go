@@ -6,7 +6,7 @@ import (
 
 func NewRestyClient(cfg Config) *resty.Client {
 	return resty.New().
-		SetHostURL(cfg.HostURL).
+		SetBaseURL(cfg.HostURL).
 		// SetHeaders(DefaultHeaders(cfg.Key)). // TODO: replace me
 		SetTimeout(cfg.Timeout).
 		SetRetryCount(cfg.RetryCount).
